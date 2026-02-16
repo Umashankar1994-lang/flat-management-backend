@@ -1,23 +1,33 @@
 package com.flat.flat_management_backend.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "users")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String email;
+    private String flatNo;
 
-    public User(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
+    private String name;
+
+    private String role; // ADMIN or MEMBER
+
+    private String password;
+
+    @Column(length = 1000)
+    private String activeJwtToken;
 }

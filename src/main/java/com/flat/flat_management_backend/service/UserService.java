@@ -1,8 +1,7 @@
 package com.flat.flat_management_backend.service;
 
-import com.flat.flat_management_backend.Repository.UserRepository;
+import com.flat.flat_management_backend.repository.UserRepository;
 import com.flat.flat_management_backend.model.User;
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
